@@ -1,0 +1,501 @@
+body {
+    overflow-x: hidden;
+    background-color: white;
+}
+
+.con-box {
+    background-color: #3498db;
+    /* Background color */
+    color: #ffffff;
+    /* Text color */
+    padding: 10px;
+    /* Padding around content */
+    text-align: center;
+    /* Center-align text */
+    font-size: 16px;
+    /* Font size */
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+/* Style for the phone number link */
+.con-box a {
+    color: #ffffff;
+    /* Link text color */
+    text-decoration: none;
+    /* Remove underlines from links */
+}
+
+.navbar{
+    background-color: #2C3E50;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+#custom-carousel {
+    max-width: 100%;
+    /* max-height: 1000px; */
+ }
+
+/* Style the carousel captions */
+.carousel-caption {
+    color: #fff;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    /* top: 50%; */
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.carousel-caption h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    
+}
+
+.carousel-caption p {
+    font-size: 25px;
+}
+
+/* Style the navigation controls */
+.carousel-control-prev,
+.carousel-control-next {
+    font-size: 24px;
+}
+
+/* Remove outline and box shadow on the navigation controls */
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* .image-container {
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+} */
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* .image-container:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+} */
+.image-container {
+    position: relative;
+}
+
+.image-container:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Adjust the background color and opacity as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    /* Add a smooth transition effect */
+}
+
+.image-container:hover::before {
+    content: "";
+    /* Change the text as needed */
+    color: white !important;
+    /* Set the text color to bright white and override any conflicting styles */
+    font-size: 18px;
+    /* Text size */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+.circular-image {
+    border-radius: 50%;
+    /* This creates a circular shape by setting the border-radius to 50% */
+    overflow: hidden;
+    /* This ensures that the content outside the rounded corners is hidden */
+}
+
+.note {
+    font-style: italic;
+    color: #888;
+}
+
+
+
+.reg-body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.reg {
+    background-color: #2C3E50;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    /* Adjust padding as needed */
+}
+
+.registration {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Adjust the background color and opacity as needed */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.reg-body1 {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.reg1 {
+    background-color: #2C3E50;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    /* Adjust padding as needed */
+}
+
+.registration1 {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Adjust the background color and opacity as needed */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* Container for the gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Individual gallery item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    /* Adjust as needed */
+    margin: 10px;
+}
+
+/* Image styling */
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Overlay and text */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Adjust as needed */
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Text appearance on hover */
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Animation on hover */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Adjust as needed */
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay1 h1 {
+    line-height: 250px;
+}
+
+/* Text appearance on hover */
+.gallery-item:hover .overlay1 {
+    opacity: 1;
+}
+
+.col-lg-4 {
+    position: relative;
+    overflow: hidden;
+}
+
+.col-lg-4 img {
+    width: 100%;
+    height: 60%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.col-lg-4:hover img {
+    transform: scale(1.1);
+}
+
+/* Container for the gallery */
+.gallery1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Individual gallery item */
+.gallery-item1 {
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    /* Adjust as needed */
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Image styling */
+.gallery-item1 img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Text overlay */
+.text-overlay1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    /* Adjust as needed */
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+}
+
+/* Animation on hover */
+.gallery-item1:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item1:hover .text-overlay1 {
+    transform: translateY(0);
+}
+
+.faq-body{
+    background-color: #2C3E50;
+    color: white
+}
+
+    /* Basic styling for the gallery container */
+    .gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+  
+      /* Styling for each row */
+      .gallery-row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+  
+      /* Styling for each image item */
+      .gallery-item {
+        width: calc(33.33% - 20px);
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+      }
+  
+      /* Styling for the image */
+      .gallery-item img {
+        width: 100%;
+        height: 250px;
+        transition: transform 0.3s ease-in-out;
+      }
+  
+      /* Hover effect to scale the image and show overlay */
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+  
+      /* Styling for the overlay */
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+  
+      /* Show overlay on hover */
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
+  
+      /* Heading style in overlay */
+      .overlay h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      /* Basic styling for the registration container */
+      .con-body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f2f2f2;
+      }
+  
+      .contact-container {
+        max-width: 600px;
+        /* margin: 50px auto; */
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #2C3E50;
+        color: white;
+      }
+  
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        color: white;
+      }
+  
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+  
+      textarea {
+        resize: vertical;
+      }
+  
+      .form-button {
+        background-color: transparent;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+  
+      .form-button:hover {
+        background-color: #1C2833;
+      }
+      .packages-container {
+        display: flex;
+        justify-content: space-around;
+        max-width: 1000px;
+        margin: 50px auto;
+      }
+  
+      .package-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 300px;
+        margin: 20px;
+      }
+  
+      .package-header {
+        background-color: #2C3E50;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+      }
+  
+      .package-body {
+        padding: 20px;
+      }
+  
+    
+  
+      .price {
+        color: #2C3E50;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .col-md-4 a{
+        color: white;
+      }
+      .accordion-item{
+        background-color: #1C2833;
+        color: white;
+      }
+      .accordion-header:hover{
+        color: white;
+      }

@@ -1,0 +1,198 @@
+.ico-vr {
+    float: right;
+}
+.ico-vr {
+    margin: 1px 0 0 0;
+}
+.ico-vr a {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+.ico-vrimg {
+    margin: 5px 0px -5px 0px;
+}
+#top #header_meta, #top #header_meta nav ul ul li, #top #header_meta nav ul ul a, #top #header_meta nav ul ul {
+	background-color: #0c2d3c;
+}
+#sub_menu1 {
+	font-size: 1.1em;
+	background-color: #28343C;
+}
+.phone-info {font-size: 11pt!important;}
+#av-custom-submenu-1 a > span.avia-menu-text {
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.main_color .av-subnav-menu a {
+	background-color: transparent;
+}
+#menu-item-394 {
+	display: none!important;
+}
+.avia-menu-text {
+	font-size: 1.3em!important;
+}
+.cart_dropdown  {
+	display: none!important;
+}
+#top #header .av-main-nav > li > a{
+	font-size: 12px;
+	font-weight: 400;
+}
+.av-main-nav > li > a {
+	padding: 0 13px;
+}
+.logo img {
+    max-height: 100%;
+}
+.html_header_top.html_header_sticky.html_large .av_minimal_header #header_main .container, .html_header_top.html_header_sticky.html_large.html_main_nav_header .av_minimal_header .main_menu ul:first-child > li a {
+    height: 70px;
+    line-height: 70px;
+}
+#top #header_meta a, #top #header_meta li, #top #header_meta .phone-info {
+	border-color: #23282D!important;
+}
+
+#top #wrap_all .social_bookmarks li a:before { font-size: 20px; }
+
+@media(max-width: 1400px) {
+	.av-main-nav > li > a {
+		padding: 0 6px;
+	}
+}
+
+@media(max-width: 1200px) {
+	#top #header .av-main-nav > li > a{
+		font-size: 12px;
+		
+	}
+	.av-main-nav > li > a {
+		padding: 0 6px;
+	}
+	
+	.container {
+    width: 100%;
+}
+}
+
+@media only screen and (max-width: 1120px) {
+  #top #header .av-main-nav > li > a {
+    font-size: 8pt;
+}
+.av-main-nav > li > a {
+    padding: 0 5px;
+}
+}
+.owl-carousel .owl-item img {
+    width: 70% !important;
+}
+.owl-carousel .smls-carousel-four-items {
+    border: none !important;
+}
+@media only screen and (max-width: 768px) {
+	.ico-vr {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+#top #header_meta{background-color: #0c2d3c!important;}
+.responsive #header .social_bookmarks{display: none!important;}
+#top #wrap_all .av-inherit-size .av-special-heading-tag {
+    font-size: 0.5em;
+}
+#top .aviaccordion-preview-title h3 {
+    font-size: 0.8em!important;
+}
+}
+
+@media only screen and (max-width: 480px) {
+	#socket .copyright {
+		float: none;
+		width: 100%;
+		margin: 0 auto 20px;
+		display: block;
+		text-align: center;
+	}
+	#socket .social_bookmarks {
+		float: none;
+		margin: 0;
+		position: relative;
+		text-align: center;
+	}
+	#top .social_bookmarks li{
+		float: none;
+		display: inline-block;
+	}
+	.responsive #top #wrap_all #serach_filter .no_margin {
+		padding: 0 !important;
+	}
+}
+#hidden {
+	display: none;
+}
+#av_section_6 > div > div > div > div > div.avia-button-wrap.avia-button-center.avia-builder-el-31.el_after_av_textblock.avia-builder-el-last {
+	padding-top: 20px;
+}
+.expedition_table a h1{
+	color: #f3b63c !important;
+}
+#main > section.event_description_section.section_padding.area > div > div.expedition_description {   
+	padding-left: 30px;
+   padding-right: 30px;
+   padding-bottom: 30px;
+}
+
+
+@media(min-width: 768px) {
+		.newsletter-form .mc4wp-form-fields {
+		display: flex;
+			align-items: center;
+	}
+}
+
+
+.newsletter-form .mc4wp-form-fields input {
+	 padding: 13px 12px !important;
+     border-radius: 2px !important;
+	margin: 0 10px 0 0 !important;
+}
+
+@media(max-width: 767px) {
+	.newsletter-form .mc4wp-form-fields input {
+		margin-bottom: 20px !important;
+	}
+}
+
+
+
+.newsletter-form .mc4wp-form-fields button {
+	padding: 14px 15px;
+	border-radius: 2px;
+}
+
+.margin-auto {
+	margin-left: 2% !important;
+}
+
+
+.margin-auto .av-centered-form  {
+	display: none;
+}
+
+.agenda_tab_items li.one-fourth {
+    width: 25%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#footer .mc4wp-form #top input[type="text"], 
+#footer .mc4wp-form #top input[type="email"] {
+	margin-bottom: 10px;
+}

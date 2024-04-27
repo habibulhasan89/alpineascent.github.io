@@ -1,0 +1,246 @@
+(function ($) {
+    "use strict";
+    // Author code here
+    /** select country from continent */
+
+    $("#continent").on("change", function (e) {
+        e.preventDefault();
+        var continent = $(this)
+            .find(":selected")
+            .data("parent");
+        var data = {
+            action: "select_countries_from_region",
+            data: continent
+        };
+        jQuery.ajax({
+            type: "POST",
+            url: visitor_ajax.ajax_url,
+            data: data,
+            beforeSend: function () {
+                jQuery(".trip-search-filter-column.country").addClass("loading");
+                jQuery(".country-loader").css("display", "block");
+            },
+            success: function (response) {
+                $(".country").html(response);
+            },
+            complete: function () {
+                jQuery(".trip-search-filter-column.country").removeClass("loading");
+                jQuery(".country-loader").css("display", "none");
+                // jQuery('.trip-search-filter-column.country label').find('img').remove();
+            }
+        });
+    });
+
+    /** ajax for  form submit
+        $('.trip-search-filter-button').on('click',function(e){
+            e.preventDefault();
+            $('.search_result-loader').css('display','block');
+            var form_selector = $(this).parents('.trip-search-filter').find('.trip-search-filter-form');
+            var form_data = {
+                'action' : 'select_tours',
+                'data': form_selector.serialize(),
+            };
+            jQuery.post(visitor_ajax.ajax_url, form_data, function(response) {
+                // console.log(response);
+                $('.search_result').html(response);
+                $('.search_result-loader').css('display','none');
+            });
+        }); */
+
+    /** read more section */
+    var outerheight = $('.expedition_content_excerpt').outerHeight();
+    if (outerheight > 500) {
+        $('.expedition_content_excerpt').addClass("read_less");
+        $('.read_more').css("display", "block");
+    } else {
+        $('.read_more').css("display", "none");
+    }
+
+    $(".read_more").on("click", function (e) {
+        e.preventDefault();
+        $(this)
+            .parents(".expedition_collapse_content")
+            .find(".expedition_content_excerpt")
+            .toggleClass("read_less");
+        if ($(this).text() == "Read More") {
+            $(this).text("Read Less");
+        } else {
+            $("html, body").animate({
+                scrollTop: $(".expedition_content_excerpt").offset().top - 300
+            },
+                1000
+            );
+
+            // $(this).parents('.expedition_collapse_content').find('.expedition_content_excerpt').animate({ scrollTop: $(".expedition_content_excerpt").offset().top });
+            $(this).text("Read More");
+        }
+        // console.log($(this).text());
+    });
+
+    // console.log($('.expedition_content_excerpt').outerHeight());
+
+    /*
+        var showTotalChar = 2250,
+            showChar = "Show more",
+            hideChar = "Show less";
+        $('.expedition_collapse_content').each(function () {
+            var content = $(this).text();
+            if (content.length > showTotalChar) {
+                var con = content.substr(0, showTotalChar);
+                var hcon = content.substr(showTotalChar, content.length - showTotalChar);
+                var txt = con + '<span class="dots">...</span><span class="morectnt"><span>' + hcon + '</span>&nbsp;&nbsp;<a href="" class="showmoretxt" style="display:block; text-align: left;">' + showChar + '</a></span>';
+                $('.expedition_collapse_content').html(txt);
+            }
+        });
+        $(".showmoretxt").click(function () {
+            if ($(this).hasClass("sample")) {
+                $(this).removeClass("sample");
+                $(this).text(showChar);
+            } else {
+                $(this).addClass("sample");
+                $(this).text(hideChar);
+            }
+            $(this).parent().prev().toggle();
+            $(this).prev().toggle();
+            return false;
+        });
+        */
+    // Agenda Tab
+    $("ul.agenda_tab_items li").click(function () {
+        var tab_id = $(this).attr("data-tab");
+
+        $("ul.agenda_tab_items li").removeClass("current");
+        $(".tab-content").removeClass("current");
+
+        $(this).addClass("current");
+        $("#" + tab_id).addClass("current");
+    });
+    // Testimonial Slider
+    $(".testimonial_carousel").owlCarousel({
+        items: 1,
+        margin: 10,
+        loop: true,
+        autoplay: true,
+        touchDrag: true,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 2000,
+        autoplayHoverPause: true,
+        fluidSpeed: true,
+        navSpeed: 2000,
+        dragEndSpeed: 2000,
+        nav: true,
+        navText: [
+            "<i class='fa fa-long-arrow-left'></i>",
+            "<i class='fa fa-long-arrow-right'></i>"
+        ]
+    });
+    // Map JS
+    function makeMap() {
+        var snazzyMap = JSON.parse(wpGlobals.mapOptions);
+        var lat = $(".expedititon_lat").val();
+        var long = $(".expedititon_long").val();
+
+        var map = new google.maps.Map(document.getElementById("the-map"), {
+            center: new google.maps.LatLng(lat, long),
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            styles: snazzyMap
+        });
+        var map_icon = $(".icon_path").val();
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(lat, long),
+            icon: map_icon
+        });
+        marker.setMap(map);
+    }
+    if ($("#the-map").length) {
+        google.maps.event.addDomListener(window, "load", makeMap);
+    }
+
+    // FAQ JS
+
+    $(".faq_trigger").click(function (e) {
+        e.preventDefault();
+
+        var $this = $(this);
+
+        $this.toggleClass("active");
+
+        if ($this.next().hasClass("show")) {
+            $this.next().removeClass("show");
+            $this.next().slideUp(400);
+        } else {
+            $this
+                .parent()
+                .parent()
+                .find(".inner")
+                .removeClass("show");
+            $this
+                .parent()
+                .parent()
+                .find(".inner")
+                .slideUp(400);
+            $this.next().toggleClass("show");
+            $this.next().slideToggle(400);
+        }
+    });
+    // Hero Slider
+    $(".hero_carousel").owlCarousel({
+        items: 1,
+        margin: 0,
+        animateOut: "fadeOut",
+        animateIn: "fadeIn",
+        loop: true,
+        autoplay: true,
+        touchDrag: true,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 2000,
+        autoplayHoverPause: true,
+        fluidSpeed: true,
+        navSpeed: 1000,
+        dragEndSpeed: 1000,
+        nav: true,
+        navText: [
+            "<i class='fa fa-angle-left'></i>",
+            "<i class='fa fa-angle-right'></i>"
+        ]
+    });
+
+    // homepage slider animation support
+    $(".hero_carousel").on("translate.owl.carousel", function () {
+        $(
+            ".hero_content h1, .hero_content h3, .hero_btn, .event_info .single_info_box"
+        )
+            .removeClass("animated fadeInUp")
+            .css({
+                opacity: "0"
+            });
+    });
+
+    $(".hero_carousel").on("translated.owl.carousel", function () {
+        $(
+            ".hero_content h1, .hero_content h3, .hero_btn, .event_info .single_info_box"
+        )
+            .addClass("animated fadeInUp")
+            .css({
+                opacity: "1"
+            });
+    });
+
+    //auto populate the form
+    var expedition_id = $(".expedition_id").val();
+    $(".populate-posts select").val(expedition_id);
+
+    $('.book_now_btn').on('click', function (e) {
+        e.preventDefault();
+        $('.expedition_book_now').slideToggle(1000);
+    });
+
+    $('#header_main .wpdreams_asl_container').css('display', 'none');
+
+    $('#menu-search-icon a.search_btn').on('click', function (e) {
+        e.preventDefault();
+        $('#header_main .wpdreams_asl_container').slideToggle(300);
+    });
+})(jQuery);
